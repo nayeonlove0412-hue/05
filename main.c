@@ -1,36 +1,28 @@
 #include <stdio.h>
 
-int main() {
-    int num1, num2;
-    char c;
-
-    printf("enter the calculation: ");
+int main(void) {
     
-    if (scanf("%d %c %d", &num1, &c, &num2) != 3) {
-        printf("Invalid input format.\n");
-        return 1;
-    }
+    int answer = 59;  
+    int guess;
+    int trials = 0; 
 
-    if (c == '+') {
-        printf("%d + %d = %d\n", num1, num2, num1 + num2);
-    }
-    else if (c == '-') {
-        printf("%d - %d = %d\n", num1, num2, num1 - num2);
-    }
-    else if (c == '*') {
-        printf("%d * %d = %d\n", num1, num2, num1 * num2);
-    }
-    else if (c == '/') {
-        if (num2 != 0) {
-            printf("%d / %d = %d\n", num1, num2, num1 / num2);
+   
+    do {
+        printf("Guess a number : ");
+        scanf("%d", &guess);
+        
+        trials++; 
+
+        
+        if (guess > answer) {
+            printf("High!\n");
+        } else if (guess < answer) {
+            printf("Low!\n");
         }
-        else {
-            printf("Error: Division by zero\n");
-        }
-    }
-    else {
-        printf("Invalid operator\n");
-    }
+    } while (guess != answer); 
+
+    
+    printf("Congratulations! trials: %d\n", trials);
 
     return 0;
 }
