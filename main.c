@@ -1,18 +1,14 @@
 #include <stdio.h>
 
 int main() {
-    char c;
-    int num = 0; 
-    printf("Enter a string: ");
-    while ((c = getchar()) != '\n') {
-        
-        if (c >= '0' && c <= '9') {
-            num++; 
-        }
+    int num;
+    int sum = 0;
+    int i;
+    printf("input a number: ");
+    scanf("%i", &num);
+    for (i = 0; i <= num; i++) {
+        sum += i;
     }
-
-    
-    printf("%d\n", num);
-
+    printf("the result is: %d\n", sum);
     return 0;
 }
